@@ -1,0 +1,28 @@
+{
+  "antigravity_hooks_json": {
+    "smart-zone-watcher": {
+      "PreInvocation": [
+        {
+          "type": "command",
+          "command": "python3 ./hooks/smart_zone_watcher.py",
+          "timeout": 10
+        }
+      ]
+    }
+  },
+  "claude_code_settings_json": {
+    "hooks": {
+      "PreCompact": [
+        {
+          "matcher": "*",
+          "hooks": [
+            {
+              "type": "command",
+              "command": "python3 /path/to/context-handoff/hooks/claude_precompact_snapshot.py"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

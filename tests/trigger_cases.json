@@ -1,0 +1,12 @@
+{
+  "skill": "context-handoff",
+  "should_trigger": [
+    "This chat is over 20 turns long and starting to loop. Save our progress so I can start a fresh chat without losing context.",
+    "Set up an autonomous fresh-session runner that runs each tasks.json batch in a clean claude -p session.",
+    "Add a zero-token hook to warn me before my Antigravity conversation hits context rot."
+  ],
+  "should_not_trigger": [
+    "Fix a syntax error on line 8 of parser.py.",
+    "Write a unit test for the add() function in math_utils.py."
+  ]
+}

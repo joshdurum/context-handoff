@@ -1,0 +1,121 @@
+{
+  "skill": "context-handoff",
+  "trigger_eval_u2": {
+    "u2_passed": true,
+    "positive_hits": 3,
+    "positive_total": 3,
+    "negative_false_positives": 0,
+    "negative_total": 2,
+    "cases": [
+      {
+        "prompt": "This chat is over 20 turns long and starting to loop. Save our progress so I can start a fresh chat without losing context.",
+        "expected": true,
+        "predicted": true,
+        "passed": true,
+        "chosen_skill": "context-handoff",
+        "cost_usd": 0.0008816
+      },
+      {
+        "prompt": "Set up an autonomous fresh-session runner that runs each tasks.json batch in a clean claude -p session.",
+        "expected": true,
+        "predicted": true,
+        "passed": true,
+        "chosen_skill": "context-handoff",
+        "cost_usd": 0.00043948
+      },
+      {
+        "prompt": "Add a zero-token hook to warn me before my Antigravity conversation hits context rot.",
+        "expected": true,
+        "predicted": true,
+        "passed": true,
+        "chosen_skill": "context-handoff",
+        "cost_usd": 0.00055608
+      },
+      {
+        "prompt": "Fix a syntax error on line 8 of parser.py.",
+        "expected": false,
+        "predicted": false,
+        "passed": true,
+        "chosen_skill": "none",
+        "cost_usd": 0.00034408
+      },
+      {
+        "prompt": "Write a unit test for the add() function in math_utils.py.",
+        "expected": false,
+        "predicted": false,
+        "passed": true,
+        "chosen_skill": "none",
+        "cost_usd": 0.00042108
+      }
+    ]
+  },
+  "autonomous_loop_live": {
+    "loop_passed": true,
+    "completed_all": true,
+    "iterations_run": 2,
+    "done_count": 2,
+    "total_cost_usd": 0.010578,
+    "final_handoff_words": 63,
+    "archived_handoffs_count": 1,
+    "iterations": [
+      {
+        "iteration": 1,
+        "task_ids": [
+          "T1"
+        ],
+        "passed": true,
+        "verify_detail": "all verify_cmd passed",
+        "cost_usd": 0.004808,
+        "duration_ms": 7281,
+        "num_turns": 4,
+        "usage": {
+          "input_tokens": 6,
+          "cache_read_input_tokens": 43069,
+          "cache_creation_input_tokens": 18162,
+          "output_tokens": 1488
+        },
+        "handoff_words": 56
+      },
+      {
+        "iteration": 2,
+        "task_ids": [
+          "T2"
+        ],
+        "passed": true,
+        "verify_detail": "all verify_cmd passed",
+        "cost_usd": 0.00577,
+        "duration_ms": 10746,
+        "num_turns": 7,
+        "usage": {
+          "input_tokens": 8,
+          "cache_read_input_tokens": 73507,
+          "cache_creation_input_tokens": 19205,
+          "output_tokens": 2387
+        },
+        "handoff_words": 63
+      }
+    ]
+  },
+  "ab_handoff_eval_u1": {
+    "u1_efficiency_and_quality_win": true,
+    "handoff_context_token_reduction_pct": 89.9,
+    "arm_a_bloated_transcript": {
+      "passed_functional_verify": true,
+      "avoided_dead_ends": true,
+      "context_words_sent": 1460,
+      "context_est_tokens": 2445,
+      "cost_usd": 0.005476,
+      "duration_ms": 6801,
+      "output_tokens": 1442
+    },
+    "arm_b_context_handoff": {
+      "passed_functional_verify": true,
+      "avoided_dead_ends": true,
+      "context_words_sent": 147,
+      "context_est_tokens": 247,
+      "cost_usd": 0.005353,
+      "duration_ms": 8628,
+      "output_tokens": 1759
+    }
+  }
+}
